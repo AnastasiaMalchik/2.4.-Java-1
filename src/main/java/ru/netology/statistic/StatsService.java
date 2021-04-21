@@ -13,7 +13,7 @@ public class StatsService {
     }
 
     public double averageAmountPurchases(long[] purchases) {
-        return amountPurchases(purchases) % purchases.length;
+        return amountPurchases(purchases) / (float) purchases.length;
     }
 
     public int monthWithMaxPurchases(long[] purchases) {
@@ -51,9 +51,8 @@ public class StatsService {
     }
 
     public int quantityMonthsWithMinPurchases(long[] purchases) {
-        double average = amountPurchases(purchases) % purchases.length;
+        double average = amountPurchases(purchases) / (float) purchases.length;
         int months = 0;
-
 
         for (long purchase : purchases) {
             if (average < purchase) {
@@ -65,9 +64,8 @@ public class StatsService {
     }
 
     public int quantityMonthsWithMaxPurchases(long[] purchases) {
-        double average = amountPurchases(purchases) % purchases.length;
+        double average = amountPurchases(purchases) / (float) purchases.length;
         int months = 0;
-
 
         for (long purchase : purchases) {
             if (average > purchase) {
